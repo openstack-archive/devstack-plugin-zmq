@@ -61,7 +61,7 @@ function uninstall_zeromq {
 
 function start_zeromq {
     echo_summary "Starting zeromq receiver"
-    run_process zeromq "$OSLO_BIN_DIR/oslo-messaging-zmq-receiver"
+    run_process 0mq "$OSLO_BIN_DIR/oslo-messaging-zmq-receiver"
 }
 
 function iniset_zeromq_backend {
