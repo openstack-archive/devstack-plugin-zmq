@@ -8,6 +8,6 @@
 
      cat > local.conf
      [[local|localrc]]
-     enable_plugin zmq https://github.com/stackforge/devstack-plugin-zmq
+     enable_plugin zmq https://git.openstack.org/openstack/devstack-plugin-zmq
 
 3. run ``stack.sh``
