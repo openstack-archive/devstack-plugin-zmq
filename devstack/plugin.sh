@@ -64,6 +64,10 @@ function start_zeromq {
     run_process 0mq "$OSLO_BIN_DIR/oslo-messaging-zmq-broker"
 }
 
+function get_transport_url {
+    echo "zmq://"
+}
+
 function iniset_zeromq_backend {
     local package=$1
     local file=$2
@@ -71,6 +75,7 @@ function iniset_zeromq_backend {
 
     iniset $file $section rpc_backend "zmq"
     iniset $file $section rpc_zmq_host `hostname`
+    iniset $file $section transport_url $(get_transport_url)
     if [ "$ZEROMQ_MATCHMAKER" == "redis" ]; then
         iniset $file $section rpc_zmq_matchmaker "redis"
         MATCHMAKER_REDIS_HOST=${MATCHMAKER_REDIS_HOST:-127.0.0.1}
