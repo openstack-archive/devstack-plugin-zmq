@@ -1,0 +1,23 @@
+- job:
+    name: devstack-plugin-zmq-tempest-full
+    parent: legacy-dsvm-base
+    run: playbooks/legacy/tempest-dsvm-full-zmq/run.yaml
+    post-run: playbooks/legacy/tempest-dsvm-full-zmq/post.yaml
+    timeout: 10800
+    required-projects:
+      - openstack-infra/devstack-gate
+      - openstack/devstack-plugin-zmq
+      - openstack/tempest
+
+- project:
+    check:
+      jobs:
+        - openstack-tox-bashate
+        - devstack-plugin-zmq-tempest-full:
+            voting: false
+            irrelevant-files:
+              - ^(test-|)requirements.txt$
+              - ^setup.cfg$
+    gate:
+      jobs:
+        - openstack-tox-bashate
