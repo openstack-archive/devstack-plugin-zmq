@@ -18,6 +18,11 @@
             irrelevant-files:
               - ^(test-|)requirements.txt$
               - ^setup.cfg$
+        - legacy-tempest-dsvm-full-zmq:
+            voting: false
+            irrelevant-files:
+              - ^(test-|)requirements.txt$
+              - ^setup.cfg$
     gate:
       jobs:
         - openstack-tox-bashate
