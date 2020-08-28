@@ -1,22 +1,7 @@
-========================
-Team and repository tags
-========================
+This project is no longer maintained.
 
-.. image:: http://governance.openstack.org/badges/devstack-plugin-zmq.svg
-    :target: http://governance.openstack.org/reference/tags/index.html
+The contents of this repository are still available in the Git
+source code management system.  To see the contents of this
+repository before it reached its end of life, please check out the
+previous commit with "git checkout HEAD^1"
 
-.. Change things from this point on
-
-======================
- Enabling in Devstack
-======================
-
-1. Download DevStack
-
-2. Add this repo as an external repository::
-
-     cat > local.conf
-     [[local|localrc]]
-     enable_plugin zmq https://git.openstack.org/openstack/devstack-plugin-zmq
-
-3. run ``stack.sh``
